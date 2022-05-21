@@ -8,6 +8,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_vayu.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_vayu-user \
-    aosp_vayu-userdebug \
-    aosp_vayu-eng
+    aosp-user \
+    aosp-userdebug \
+    aosp-eng
