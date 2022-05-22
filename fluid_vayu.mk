@@ -11,8 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from vayu device
 $(call inherit-product, device/xiaomi/vayu/device.mk)
 
-# Inherit some common PE stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common Fluid stuff.
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
 
 # Boot Animation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
@@ -20,7 +20,7 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # Feature Flags
 TARGET_SUPPORTS_QUICK_TAP := true
 
-PRODUCT_NAME := aosp_vayu
+PRODUCT_NAME := fluid_vayu
 PRODUCT_DEVICE := vayu
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3 Pro
@@ -36,3 +36,11 @@ $(call inherit-product-if-exists, vendor/xiaomi/devicesettings/config.mk)
 $(call inherit-product-if-exists, vendor/Gcam/config.mk)
 # Pixel Launcher
 $(call inherit-product-if-exists, vendor/pixel/launcher/config.mk)
+
+# GApps
+ifeq ($(USE_GAPPS),true)
+TARGET_INCLUDE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+endif
