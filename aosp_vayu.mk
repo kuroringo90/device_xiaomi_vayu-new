@@ -28,7 +28,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Add-ons
 # Device Settings
-# $(call inherit-product-if-exists, vendor/xiaomi/devicesettings/config.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/devicesettings/config.mk)
 # Google Camera 
 # $(call inherit-product-if-exists, vendor/Gcam/config.mk)
 # Pixel Launcher
